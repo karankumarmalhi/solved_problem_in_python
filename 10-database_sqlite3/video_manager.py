@@ -21,17 +21,17 @@ def add_video():
     name = input("Enter the name of video:")
     time = input("Enter the duration of video:")
     cursor.execute("INSERT INTO videos (name, time) VALUES (?, ?)", (name, time))
-    cursor.commit()
+    con.commit()
     
 
 def update_video(video_id, name, time):
     cursor.execute("UPDATE videos SET naame = ? , time = ? WHERE id = ?",(name, time , video_id))
-    cursor.commit()
+    con.commit()
 
 
 def delete_video(video_id):
     cursor.execute("DELETE FROM videos WHERE id = ?", (video_id,))
-    cursor.commit()
+    con.commit()
 
 def main():
     while True:
